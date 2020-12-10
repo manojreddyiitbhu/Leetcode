@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int minimumTotal(vector<vector<int>>& triangle) {
+        int i,j,hsize,vsize=triangle.size();
+        i=vsize-2;
+        for(i; i>=0; i--){
+           hsize = triangle[i].size();
+            for(j=0; j<hsize; j++){
+              triangle[i][j] += min(triangle[i+1][j],triangle[i+1][j+1]) ;
+            }
+        }
+        return triangle[0][0];
+    }
+};
