@@ -1,0 +1,12 @@
+class Solution {
+public:
+bool isSubsequence(string s, string t) {
+    cout<<s<<" "<<t<<endl;
+        if(s.size()==0)
+            return true;
+        if(t.size()==0)
+            return false;
+        int found =t.find(s[0]);
+        return (found<t.size())&&(isSubsequence(s.substr(1),t.substr(found+1)));
+    }
+};
